@@ -9,7 +9,6 @@ snippet module
 #parameter
 snippet pa
 	parameter ${1:S0} = ${2:2'b00};
-	${3}
 
 #always block
 snippet al
@@ -43,11 +42,10 @@ snippet eli
 #assign statement
 snippet as
 	assign ${1:Out} = ${2:(In == 1)?(1):(0)};
-	${3}
 
 #case block
 snippet case
-	case(${1:State}) begin
+	case(${1:State}) 
 		${2:default}: begin
 			${3://Code}
 		end
@@ -83,4 +81,9 @@ snippet dump
 	$fsdbDumpfile("${1:FileName}.fsdb");
 	$fsdbDumpvars;
 	end
+
+#comment
+snippet #b
+	//========================================
+	${1://Comment}
 
